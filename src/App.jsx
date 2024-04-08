@@ -9,6 +9,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AppLayout from './ui/AppLayout';
 import NotFound from './ui/Error';
 
+import { action as updateOrderAction } from './features/order/UpdateOrder';
+
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -31,6 +33,7 @@ const router = createBrowserRouter([
         path: '/order/:orderId',
         element: <Order />,
         loader: orderLoader,
+        action: updateOrderAction,
       },
     ],
   },
